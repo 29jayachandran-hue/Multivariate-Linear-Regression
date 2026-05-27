@@ -42,10 +42,7 @@ plt.plot(X,Y_pred,color="red")
 plt.show()
 ```
 ## Output:
-
-### Insert your output
-
-<br>
+<img width="721" height="617" alt="image" src="https://github.com/user-attachments/assets/3eba5842-3a6c-4c52-b568-9d4df9cda0f8" />
 
 ## Result
 Thus the multivariate linear regression is implemented and predicted the output using python program.
