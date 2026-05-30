@@ -22,27 +22,20 @@ Predict and Plot Residual Errors Predict the output values, calculate residual e
 
 ## Program:
 ```
-import numpy as np
-import matplotlib.pyplot as plt
-X = np.array(eval(input()))
-Y = np.array(eval(input()))
-Xmean = np.mean(X)
-Ymean = np.mean(Y)
-num,den = 0,0
-for i in range(len(X)):
-    num += (X[i]-Xmean)*(Y[i]-Ymean)
-    den += (X[i]-Xmean)**2
-m = num/den
-c = Ymean-m*Xmean   
-print (m, c)
-Y_pred = m*X + c
-print (Y_pred)
-plt.scatter(X,Y)
-plt.plot(X,Y_pred,color="red")
-plt.show()
+import pandas as pd
+from sklearn import linear_model
+df=pd.read_csv("car (1).csv")
+x=df[["Volume","Weight"]]
+y=df["CO2"]
+regression=linear_model.LinearRegression()
+regression.fit(x,y)
+print(regression.coef_)
+print(regression.intercept_)
+print(regression.predict([[3300,1300]]))
 ```
 ## Output:
-<img width="721" height="617" alt="image" src="https://github.com/user-attachments/assets/3eba5842-3a6c-4c52-b568-9d4df9cda0f8" />
+<img width="1357" height="315" alt="image" src="https://github.com/user-attachments/assets/f45340bd-875b-42f7-8498-a7311a05a2c3" />
+
 
 ## Result
 Thus the multivariate linear regression is implemented and predicted the output using python program.
